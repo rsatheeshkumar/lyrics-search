@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 const Lyrics = (props) => {
   const [track, setTrack] = useState(null);
   const [lyrics, setLyrics] = useState(null);
+  if (!track) {
+    <h1>Loading...</h1>;
+  }
   useEffect(() => {
     axios
       .get(

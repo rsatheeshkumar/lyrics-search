@@ -43,6 +43,5 @@ const Search = ({ findTrack }) => {
 const mapStateToProps = (state) => ({
   tracks: state.tracks.tracks,
 });
-// const mapDispatchToProps = (dispatch) => ({});
 
 export default connect(mapStateToProps)(Search);

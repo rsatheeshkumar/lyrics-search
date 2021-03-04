@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
+
 const Track = ({ track }) => {
+  if (!track) {
+    <Spinner animation="border" />;
+  }
   return (
     <div className="col-md-6 col-md-6">
       <div className="card mb-4 shadow-sm">

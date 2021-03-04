@@ -33,7 +33,15 @@ export const fetchTracks = () => {
   return (dispatch) => {
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=&apikey=a1e4cd6a90272c937fa89d2b57a502c3"
+        "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get",
+        {
+          params: {
+            chart_name: "top",
+            page: 1,
+            page_size: 10,
+            apikey: "a1e4cd6a90272c937fa89d2b57a502c3",
+          },
+        }
       )
       .then((result) => {
         const tracks = result.data.message.body.track_list;
